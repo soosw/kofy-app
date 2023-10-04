@@ -64,7 +64,7 @@ struct LandingView: View {
                                 .stroke(.white, lineWidth: 3)
                         )
                     }
-                    .padding([.bottom])
+                    .padding([.bottom], 30)
                     .frame(width: geometry.size.width / 2)
                 }
             }
