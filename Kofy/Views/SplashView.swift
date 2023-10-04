@@ -55,7 +55,7 @@ class PlayerUIView: UIView {
     }
 }
 
-struct SpashView: View {
+struct SplashView: View {
     var body: some View {
         ZStack {
             Color(.black)
@@ -65,10 +65,11 @@ struct SpashView: View {
             Image("KofyLogo")
                 .resizable()
                 .scaledToFit()
+                .frame(width: 170)
         }
     }
 }
 
 #Preview {
-    SpashView()
+    SplashView()
 }

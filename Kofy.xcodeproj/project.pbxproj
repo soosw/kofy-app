@@ -12,7 +12,9 @@
 		56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4B2ACC9351008750FD /* Assets.xcassets */; };
 		56CB6F4F2ACC9351008750FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4E2ACC9351008750FD /* Preview Assets.xcassets */; };
 		56CB6F582ACD0CE2008750FD /* TextEncrypt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F562ACD0CE2008750FD /* TextEncrypt.mp4 */; };
-		56CB6F5C2ACD0D90008750FD /* SpashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F5B2ACD0D90008750FD /* SpashView.swift */; };
+		56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F5B2ACD0D90008750FD /* SplashView.swift */; };
+		56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F632ACD23CC008750FD /* LandingView.swift */; };
+		56CB6F672ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F662ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +24,10 @@
 		56CB6F4B2ACC9351008750FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56CB6F4E2ACC9351008750FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56CB6F562ACD0CE2008750FD /* TextEncrypt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TextEncrypt.mp4; sourceTree = "<group>"; };
-		56CB6F5B2ACD0D90008750FD /* SpashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashView.swift; sourceTree = "<group>"; };
+		56CB6F5B2ACD0D90008750FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		56CB6F632ACD23CC008750FD /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		56CB6F662ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenTokyoZoo-Regular.ttf"; sourceTree = "<group>"; };
+		56CB6F682ACD27CE008750FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,8 @@
 		56CB6F462ACC9350008750FD /* Kofy */ = {
 			isa = PBXGroup;
 			children = (
+				56CB6F682ACD27CE008750FD /* Info.plist */,
+				56CB6F652ACD26EB008750FD /* Fonts */,
 				56CB6F5A2ACD0D80008750FD /* Views */,
 				56CB6F552ACD0CBA008750FD /* Media */,
 				56CB6F472ACC9350008750FD /* KofyApp.swift */,
@@ -84,9 +91,18 @@
 		56CB6F5A2ACD0D80008750FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56CB6F5B2ACD0D90008750FD /* SpashView.swift */,
+				56CB6F5B2ACD0D90008750FD /* SplashView.swift */,
+				56CB6F632ACD23CC008750FD /* LandingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		56CB6F652ACD26EB008750FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				56CB6F662ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CB6F4F2ACC9351008750FD /* Preview Assets.xcassets in Resources */,
+				56CB6F672ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf in Resources */,
 				56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */,
 				56CB6F582ACD0CE2008750FD /* TextEncrypt.mp4 in Resources */,
 			);
@@ -160,7 +177,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56CB6F5C2ACD0D90008750FD /* SpashView.swift in Sources */,
+				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
+				56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */,
 				56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */,
 				56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */,
 			);
@@ -299,6 +317,7 @@
 				DEVELOPMENT_TEAM = 6CXRQS8B7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kofy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,6 +347,7 @@
 				DEVELOPMENT_TEAM = 6CXRQS8B7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kofy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
