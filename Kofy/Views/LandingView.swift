@@ -22,7 +22,7 @@ struct LandingView: View {
                             .frame(width: 170)
                         Text("KOFY")
                             .font(Font.custom("ZenTokyoZoo-Regular", size: 50))
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                     }
                     .padding([.top], 50)
                     
@@ -39,7 +39,7 @@ struct LandingView: View {
                         .padding()
                         .background(Color(red: 0.156, green: 0.156, blue: 0.156))
                         .cornerRadius(.infinity)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                         .bold()
                         .overlay(
                             RoundedRectangle(cornerRadius: .infinity)
@@ -57,7 +57,7 @@ struct LandingView: View {
                         .padding()
                         .background(Color(red: 0.556, green: 0.478, blue: 0.996))
                         .cornerRadius(.infinity)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                         .bold()
                         .overlay(
                             RoundedRectangle(cornerRadius: .infinity)
