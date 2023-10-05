@@ -15,6 +15,10 @@
 		56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F5B2ACD0D90008750FD /* SplashView.swift */; };
 		56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F632ACD23CC008750FD /* LandingView.swift */; };
 		56CB6F672ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F662ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf */; };
+		56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F872ACE2810008750FD /* SignUpView.swift */; };
+		56CB6F8A2ACE2C53008750FD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F892ACE2C53008750FD /* SignInView.swift */; };
+		56CB6F8C2ACE2F0D008750FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F8B2ACE2F0D008750FD /* HomeView.swift */; };
+		56CB6F902ACE38B5008750FD /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F8F2ACE38B5008750FD /* ReminderListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		56CB6F632ACD23CC008750FD /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		56CB6F662ACD26F4008750FD /* ZenTokyoZoo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenTokyoZoo-Regular.ttf"; sourceTree = "<group>"; };
 		56CB6F682ACD27CE008750FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		56CB6F872ACE2810008750FD /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		56CB6F892ACE2C53008750FD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		56CB6F8B2ACE2F0D008750FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		56CB6F8F2ACE38B5008750FD /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				56CB6F5B2ACD0D90008750FD /* SplashView.swift */,
+				56CB6F8B2ACE2F0D008750FD /* HomeView.swift */,
+				56CB6F8F2ACE38B5008750FD /* ReminderListView.swift */,
 				56CB6F632ACD23CC008750FD /* LandingView.swift */,
+				56CB6F872ACE2810008750FD /* SignUpView.swift */,
+				56CB6F892ACE2C53008750FD /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,9 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CB6F8A2ACE2C53008750FD /* SignInView.swift in Sources */,
+				56CB6F8C2ACE2F0D008750FD /* HomeView.swift in Sources */,
 				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
+				56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */,
 				56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */,
 				56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */,
+				56CB6F902ACE38B5008750FD /* ReminderListView.swift in Sources */,
 				56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
