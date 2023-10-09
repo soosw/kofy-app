@@ -11,6 +11,7 @@ struct SignUpView: View {
     @State private var username: String = ""
     @State private var mail: String = ""
     @State private var password: String = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         GeometryReader { geometry in
@@ -103,6 +104,21 @@ struct SignUpView: View {
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                            .bold()
+                            .foregroundStyle(Color(red: 0.329, green: 0.329, blue: 0.329))
+                    }
+                }
+            }
         }
     }
 }

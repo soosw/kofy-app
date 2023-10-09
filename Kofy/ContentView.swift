@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var splashIsActive: Bool = true;
+    
     var body: some View {
-        SignInView()
+        ZStack {
+            if self.splashIsActive {
+                SplashView()
+            } else {
+                LandingView()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10.5) {
+                withAnimation {
+                    self.splashIsActive = false;
+                }
+            }
+        }
     }
 }
 
