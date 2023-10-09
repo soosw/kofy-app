@@ -37,16 +37,7 @@ class PlayerUIView: UIView {
                                                name: .AVPlayerItemDidPlayToEndTime,
                                                object: player.currentItem)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(applicationWillEnterForeground(notification:)),
-                                                name: UIApplication.willEnterForegroundNotification,
-                                                object: player.currentItem)
-        
         layer.addSublayer(playerLayer)
-    }
-    
-    @objc func applicationWillEnterForeground(notification: Notification) {
-        playerLayer.player?.play()
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
