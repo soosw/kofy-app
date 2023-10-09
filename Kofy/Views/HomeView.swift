@@ -63,7 +63,11 @@ struct HomeView: View {
                     
                     VStack {
                         Text("Historial")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding([.leading], 25)
                             .font(Font.system(size: 32, weight: .bold))
+                        
+                        HistoryListView()
                     }
                     
                     

@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var splashIsActive: Bool = true;
     
     var body: some View {
+//        HomeView()
         ZStack {
             if self.splashIsActive {
                 SplashView()
@@ -19,7 +20,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 withAnimation {
                     self.splashIsActive = false;
                 }
