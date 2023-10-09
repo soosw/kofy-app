@@ -23,62 +23,94 @@ struct ReminderListView: View {
     var reminders = [Reminder(name: "Paracetamol", quantity: "500g", description: "En 2 horas"), Reminder(name: "Ibuprofeno", quantity: "1g", description: "En 8.5 horas")];
     
     var body: some View {
-        ScrollView {
-            HStack {
-                Image("pillsIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40)
-                    .padding([.leading, .trailing])
-                VStack(alignment: .leading) {
-                    Text(reminders[0].name)
-                        .foregroundStyle(.black)
-                        .font(Font.system(size: 22, weight: .bold))
-                    Text(reminders[0].description)
-                        .foregroundStyle(.black)
-                        .font(Font.system(size: 15))
+        GeometryReader { geometry in
+            ScrollView {
+                HStack {
+                    Image("pillsIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40)
+                        .padding([.leading, .trailing])
+                    
+                    VStack(alignment: .leading) {
+                        Text(reminders[0].name)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 21, weight: .bold))
+                        Text(reminders[0].description)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 15))
+                    }
+                    .frame(width: .infinity)
+                    .padding([.top, .bottom])
+                    
+                    HStack {
+                        Text(reminders[0].quantity)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 21, weight: .bold))
+                            .padding([.trailing])
+                        
+                        Image("arrowIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15)
+                            .padding([.trailing])
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
+                .frame(width: geometry.size.width / 1.15, alignment: .leading)
+                .background(.white)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .inset(by: 2)
+                        .stroke(Color(red: 0.56, green: 0.63, blue: 0.65), lineWidth: 4)
+                )
                 
-                Text(reminders[0].quantity)
-                    .foregroundStyle(.black)
-                    .font(Font.system(size: 23, weight: .bold))
                 
-                Image("arrowIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20)
-            }
-            .background(.white)
-            .cornerRadius(8)
-            
-            HStack {
-                Image("pillsIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40)
-                    .padding([.leading, .trailing])
-                VStack(alignment: .leading) {
-                    Text(reminders[1].name)
-                        .foregroundStyle(.black)
-                        .font(Font.system(size: 22, weight: .bold))
-                    Text(reminders[1].description)
-                        .foregroundStyle(.black)
-                        .font(Font.system(size: 15))
+                
+                HStack {
+                    Image("pillsIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40)
+                        .padding([.leading, .trailing])
+                    
+                    VStack(alignment: .leading) {
+                        Text(reminders[1].name)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 21, weight: .bold))
+                        Text(reminders[1].description)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 15))
+                    }
+                    .frame(width: .infinity)
+                    .padding([.top, .bottom])
+                    
+                    HStack {
+                        Text(reminders[1].quantity)
+                            .foregroundStyle(.black)
+                            .font(Font.system(size: 21, weight: .bold))
+                            .padding([.trailing])
+                        
+                        Image("arrowIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15)
+                            .padding([.trailing])
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                
-                Text(reminders[1].quantity)
-                    .foregroundStyle(.black)
-                    .font(Font.system(size: 23, weight: .bold))
-                
-                Image("arrowIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20)
+                .frame(width: geometry.size.width / 1.15, alignment: .leading)
+                .background(.white)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .inset(by: 2)
+                        .stroke(Color(red: 0.56, green: 0.63, blue: 0.65), lineWidth: 4)
+                )
             }
-            .background(.white)
-            .cornerRadius(8)
+            .frame(width: geometry.size.width, alignment: .center)
         }
-        .frame(maxWidth: .greatestFiniteMagnitude)
     }
 }
 

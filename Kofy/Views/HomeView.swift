@@ -32,7 +32,7 @@ struct HomeView: View {
                                 .frame(width: 70)
                                 .padding([.trailing], 10)
                         }
-                        .padding()
+                        .padding(8)
                         .background(Color(red: 0.85, green: 0.85, blue: 0.85))
                         .clipShape(
                             .rect(
@@ -48,13 +48,15 @@ struct HomeView: View {
                         Text("Recordatorios")
                             .foregroundStyle(Color(red: 0.956, green: 0.752, blue: 0.396))
                             .font(Font.system(size: 32, weight: .bold))
+                            .padding([.leading], 25)
+                            .padding([.top], 10)
                         
                         ReminderListView()
                     }
                     
                     VStack {
                         Color(red: 0.313, green: 0.313, blue: 0.313)
-                            .frame(width: geometry.size.width / 3, height: 4)
+                            .frame(width: geometry.size.width / 1.3, height: 4)
                             .cornerRadius(.infinity)
                     }
                     .padding([.top, .bottom], 10)
