@@ -11,21 +11,22 @@ struct ContentView: View {
     @State var splashIsActive: Bool = true;
     
     var body: some View {
-//        HomeView()
-        ZStack {
-            if self.splashIsActive {
-                SplashView()
-            } else {
-                HomeView()
-            }
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                withAnimation {
-                    self.splashIsActive = false;
-                }
-            }
-        }
+        HomeView()
+//        SpeechSessionView()
+//        ZStack {
+//            if self.splashIsActive {
+//                SplashView()
+//            } else {
+//                HomeView()
+//            }
+//        }
+//        .onAppear {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                withAnimation {
+//                    self.splashIsActive = false;
+//                }
+//            }
+//        }
     }
 }
 
