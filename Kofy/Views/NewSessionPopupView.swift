@@ -45,6 +45,11 @@ struct NewSessionPopupView: View {
                             .focused($isInitiallyFocused)
                             .onChange(of: popupIsShown, { oldValue, newValue in
                                 if (newValue) {
+                                    sessionName = ""
+                                    sessionDescription = ""
+                                    sessionDoctor = ""
+                                    sessionDate = Date()
+                                    
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                         isInitiallyFocused = true;
                                    }
