@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct OverlayModifier<OverlayView: View>: ViewModifier {
     
     @Binding var isPresented: Bool
@@ -31,7 +29,6 @@ struct OverlayModifier<OverlayView: View>: ViewModifier {
 }
 
 extension View {
-    
     func popup<OverlayView: View>(isPresented: Binding<Bool>,
                                   blurRadius: CGFloat = 3,
                                   blurAnimation: Animation? = .linear,
