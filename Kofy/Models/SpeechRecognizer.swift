@@ -102,12 +102,15 @@ class SpeechRecognizer: ObservableObject {
         let audioEngine = AVAudioEngine()
         
         let request = SFSpeechAudioBufferRecognitionRequest()
+        request.addsPunctuation = true
         request.shouldReportPartialResults = true
         
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        try audioSession.setInputGain(0.5)
         let inputNode = audioEngine.inputNode
+    
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
