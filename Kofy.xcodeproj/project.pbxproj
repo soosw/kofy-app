@@ -16,6 +16,8 @@
 		56267ECE2AD766DB00A39AB7 /* NewSessionPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */; };
 		56267ED22AD771B200A39AB7 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED12AD771B200A39AB7 /* PopupModifier.swift */; };
 		56267ED42AD7720D00A39AB7 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */; };
+		56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */; };
+		56267ED82AD8EF9000A39AB7 /* NewDoctorPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */; };
 		56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F472ACC9350008750FD /* KofyApp.swift */; };
 		56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F492ACC9350008750FD /* ContentView.swift */; };
 		56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4B2ACC9351008750FD /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionPopupView.swift; sourceTree = "<group>"; };
 		56267ED12AD771B200A39AB7 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 		56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
+		56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDoctorPopupView.swift; sourceTree = "<group>"; };
 		56CB6F442ACC9350008750FD /* Kofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB6F472ACC9350008750FD /* KofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KofyApp.swift; sourceTree = "<group>"; };
 		56CB6F492ACC9350008750FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				56267EC72AD74B2500A39AB7 /* SpeechRecognizer.swift */,
+				56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				56CB6F892ACE2C53008750FD /* SignInView.swift */,
 				56267EBF2AD46BA400A39AB7 /* HistoryListView.swift */,
 				56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */,
+				56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */,
 				56267ED12AD771B200A39AB7 /* PopupModifier.swift */,
 				56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */,
 			);
@@ -231,6 +237,7 @@
 				56267ECA2AD763DD00A39AB7 /* DoctorListView.swift in Sources */,
 				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
 				56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */,
+				56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */,
 				56267EC82AD74B2500A39AB7 /* SpeechRecognizer.swift in Sources */,
 				56267EC42AD74A6100A39AB7 /* SpeechSessionView.swift in Sources */,
 				56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */,
@@ -241,6 +248,7 @@
 				56267EC22AD7428200A39AB7 /* DailyView.swift in Sources */,
 				56267ECC2AD7640A00A39AB7 /* ProfileView.swift in Sources */,
 				56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */,
+				56267ED82AD8EF9000A39AB7 /* NewDoctorPopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
