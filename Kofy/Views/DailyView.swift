@@ -72,6 +72,7 @@ struct DailyView: View {
                     
                 }
             }
+            .padding([.bottom])
             .ignoresSafeArea(.keyboard)
             .frame(width: geometry.size.width)
         }
