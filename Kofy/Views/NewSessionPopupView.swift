@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RoundedCornersShape: Shape {
-    
     let radius: CGFloat
     let corners: UIRectCorner
     
@@ -26,18 +25,22 @@ struct NewSessionPopupView: View {
     @State var sessionDescription = ""
     @State var sessionDoctor = "Seleccionar"
     @State var sessionDate = Date()
+    @State var doctors = ["Seleccionar", "Dr. Oscar", "Dra. Sandra", "Dr. Emilio", "Dr. Pepe", "-- Nuevo Doctor --"]
     
     @State private var currentPickedColor = 0;
-    @State private var cardColors = ["CardColor0", "CardColor1", "CardColor2", "CardColor3", "CardColor4", "CardColor5"]
+    var cardColors = ["CardColor0", "CardColor1", "CardColor2", "CardColor3", "CardColor4", "CardColor5"]
     @State private var isRotating = false
     @State private var rotationAngle = 15
     @State private var longPressStarted = false
+    
     @State private var newDoctorPopupShown = false
-    
-    @State var doctors = ["Seleccionar", "Dr. Oscar", "Dra. Sandra", "Dr. Emilio", "Dr. Pepe", "-- Nuevo Doctor --"]
-    
     @Binding var popupIsShown: Bool
     @FocusState private var isInitiallyFocused: Bool
+    
+    @State var cardSlideOffset = 0
+    
+    @State private var showTranscriptView = false
+    @State private var showPrescriptionView = false
     
     func dismissKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -49,13 +52,15 @@ struct NewSessionPopupView: View {
                 Spacer()
                 VStack {
                     HStack {
-                        TextField("Nombre de la sesión", text: $sessionName, prompt: Text("Nueva Sesión").foregroundStyle(.gray))
+                        TextField("Nombre de la sesión", text: $sessionName, prompt: Text("Nueva Cita").foregroundStyle(.gray))
                             .padding()
+                            .padding([.leading], 10)
                             .font(Font.system(size: 28))
                             .bold()
                             .focused($isInitiallyFocused)
                             .onChange(of: popupIsShown, { oldValue, newValue in
                                 if (newValue) {
+                                    cardSlideOffset = 0
                                     currentPickedColor = 0
                                     sessionName = ""
                                     sessionDescription = ""
@@ -64,7 +69,7 @@ struct NewSessionPopupView: View {
                                     
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                         isInitiallyFocused = true;
-                                   }
+                                    }
                                 } else {
                                     dismissKeyboard();
                                     isInitiallyFocused = false;
@@ -128,18 +133,22 @@ struct NewSessionPopupView: View {
                                 .padding()
                         }
                     }
+                    .ignoresSafeArea(.keyboard)
                     .background(LinearGradient(colors: [Color(cardColors[currentPickedColor]), .white],
                                                startPoint: .top,
                                                endPoint: .bottom).padding([.bottom], -25))
                     .foregroundStyle(.black)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .padding([.bottom], 10)
-    
+                    
                     
                     VStack(alignment: .leading, spacing: 10) {
                         TextField("Descripción de la sesión", text: $sessionDescription, prompt: Text("Descripción").foregroundStyle(.gray))
-                            .padding([.leading, .bottom])
                             .foregroundStyle(.black)
+                            .padding()
+                            .background(Color(red: 0.976, green: 0.976, blue: 0.976))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding([.leading, .trailing])
                         
                         HStack {
                             Text("Doctor")
@@ -152,10 +161,13 @@ struct NewSessionPopupView: View {
                                     Text(doctor)
                                 }
                             }
-                            .tint(.black)
+                            .tint(.gray)
                             .background(Color(red: 0.87, green: 0.87, blue: 0.88))
                             .pickerStyle(.menu)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .sensoryFeedback(trigger: newDoctorPopupShown) { oldValue, newValue in
+                                return .impact(flexibility: .solid, intensity: 0.5)
+                            }
                             .onTapGesture(perform: {
                                 dismissKeyboard()
                             })
@@ -166,18 +178,37 @@ struct NewSessionPopupView: View {
                                     newDoctorPopupShown = true;
                                 }
                             }
+                            
+//                            Button {
+//                                
+//                            } label: {
+//                                Image(systemName: "plus.app")
+//                                    .resizable()
+//                                    .scaledToFit()
+//                                    .foregroundStyle(.gray)
+//                                    .frame(width: 30)
+//                            }
                         }
+                        .ignoresSafeArea(.keyboard)
+                        .foregroundStyle(.black)
+                        .padding()
+                        .background(Color(red: 0.976, green: 0.976, blue: 0.976))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding([.leading, .trailing])
                         
                         DatePicker("Fecha de la sesión", selection: $sessionDate, displayedComponents: [.date])
                             .foregroundStyle(.gray)
                             .padding()
-                            .padding([.bottom], 20)
+                            .background(Color(red: 0.976, green: 0.976, blue: 0.976))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding([.leading, .trailing])
                             .onTapGesture(perform: {
                                 dismissKeyboard()
                             })
                     }
-                    
+                    .ignoresSafeArea(.keyboard)
+                    .padding([.bottom], 20)
+                
                     HStack(spacing: 30) {
                         Button {
                             print("Sesión de escucha")
@@ -237,15 +268,40 @@ struct NewSessionPopupView: View {
                                 .padding([.trailing], -8)
                         })
                     }
+                    .ignoresSafeArea(.keyboard)
                     .frame(width: geometry.size.width)
                     
+                    VStack {
+                        EmptyView()
+                    }
+                    .frame(height: 300)
                 }
-                .padding(.bottom, geometry.safeAreaInsets.bottom)
+                .ignoresSafeArea(.keyboard)
                 .background(.white)
                 .clipShape(RoundedCornersShape(radius: 16, corners: [.topLeft, .topRight]))
+                .offset(y: CGFloat(cardSlideOffset))
             }
             .shadow(color: .gray, radius: 15, x: 0,  y: 8)
+            .ignoresSafeArea(.keyboard)
+            .ignoresSafeArea(.all)
             .edgesIgnoringSafeArea([.bottom])
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        if (value.translation.height > 0 && popupIsShown) {
+                            cardSlideOffset = Int(value.translation.height)
+                        }
+                        
+                        if value.translation.height > 100 {
+                            dismissKeyboard()
+                            popupIsShown = false
+                        } else if (popupIsShown) {
+                            withAnimation(Animation.easeInOut(duration: 0.2)) {
+                                cardSlideOffset = 0
+                            }
+                        }
+                    }
+            )
             .popup(isPresented: $newDoctorPopupShown) {
                 NewDoctorPopupView(popupIsShown: $newDoctorPopupShown)
             }
