@@ -63,7 +63,10 @@ struct SignUpView: View {
                         .frame(width: geometry.size.width * 0.75)
                         
                         Button {
-                            print("Registrarme")
+                            let signUp = SignUpViewModel()
+                            
+                            try signUp.registerSignUpData(username: username, email: mail, password: password, type: 0)
+                        
                         } label: {
                             Text("Registrarme")
                                 .frame(width: geometry.size.width / 2.5)

@@ -7,16 +7,14 @@
 
 import Foundation
 
-struct SignUpInformation : Identifiable {
+struct SignUpInformation {
     
-    var id : UUID
     var username : String
     var email : String
     var password : String
     var type : Int
     
     init(id: UUID, username: String, email: String, password: String, type: Int) {
-        self.id = id
         self.username = username
         self.email = email
         self.password = password
@@ -24,7 +22,6 @@ struct SignUpInformation : Identifiable {
     }
     
     init() {
-        self.id = UUID()
         self.username = " "
         self.email = " "
         self.password = " "
