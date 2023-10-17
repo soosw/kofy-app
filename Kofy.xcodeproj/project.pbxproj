@@ -22,6 +22,7 @@
 		56267EDF2ADB6F1000A39AB7 /* HistoryContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */; };
 		56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */; };
 		56267EE32ADB749500A39AB7 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE22ADB749500A39AB7 /* LearnView.swift */; };
+		56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE52ADDD37000A39AB7 /* HistoryCard.swift */; };
 		56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F472ACC9350008750FD /* KofyApp.swift */; };
 		56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F492ACC9350008750FD /* ContentView.swift */; };
 		56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4B2ACC9351008750FD /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentModel.swift; sourceTree = "<group>"; };
 		56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentViewModel.swift; sourceTree = "<group>"; };
 		56267EE22ADB749500A39AB7 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		56267EE52ADDD37000A39AB7 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
 		56CB6F442ACC9350008750FD /* Kofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB6F472ACC9350008750FD /* KofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KofyApp.swift; sourceTree = "<group>"; };
 		56CB6F492ACC9350008750FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		56267EE42ADDD26A00A39AB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				56267EE52ADDD37000A39AB7 /* HistoryCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		56CB6F3B2ACC9350008750FD = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 				56CB6F682ACD27CE008750FD /* Info.plist */,
 				56CB6F652ACD26EB008750FD /* Fonts */,
 				56CB6F5A2ACD0D80008750FD /* Views */,
+				56267EE42ADDD26A00A39AB7 /* Components */,
 				56CB6F552ACD0CBA008750FD /* Media */,
 				56CB6F472ACC9350008750FD /* KofyApp.swift */,
 				56CB6F492ACC9350008750FD /* ContentView.swift */,
@@ -258,6 +269,7 @@
 				56267ECA2AD763DD00A39AB7 /* DoctorListView.swift in Sources */,
 				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
 				56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */,
+				56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */,
 				56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */,
 				56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */,
 				56267EC82AD74B2500A39AB7 /* SpeechRecognizer.swift in Sources */,
