@@ -11,7 +11,8 @@ struct ContentView: View {
     @State var splashIsActive: Bool = true;
     
     var body: some View {
-        HomeView()
+        SignUpView()
+//        HomeView()
 //        SpeechSessionView()
 //        ZStack {
 //            if self.splashIsActive {
