@@ -65,7 +65,10 @@ struct SignUpView: View {
                         Button {
                             let signUp = SignUpViewModel()
                             
-                            try signUp.registerSignUpData(username: username, email: mail, password: password, type: 0)
+                            Task{
+                                try await signUp.registerSignUpData(username: username, email: mail, password: password, type: 0)
+                            }
+                            
                         
                         } label: {
                             Text("Registrarme")

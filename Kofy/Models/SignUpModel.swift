@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct SignUpInformation {
+struct SignUpInformation : Encodable {
     
     var username : String
     var email : String
     var password : String
     var type : Int
     
-    init(id: UUID, username: String, email: String, password: String, type: Int) {
+    init(username: String, email: String, password: String, type: Int) {
         self.username = username
         self.email = email
         self.password = password
@@ -27,11 +27,4 @@ struct SignUpInformation {
         self.password = " "
         self.type = 0
     }
-    
-    enum CodingKeys : String, CodingKey {
-        case index
-        case name
-        case url
-    }
-    
 }
