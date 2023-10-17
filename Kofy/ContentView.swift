@@ -18,7 +18,7 @@ struct ContentView: View {
 //            if self.splashIsActive {
 //                SplashView()
 //            } else {
-//                HomeView()
+//                LandingView()
 //            }
 //        }
 //        .onAppear {

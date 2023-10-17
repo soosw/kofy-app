@@ -23,7 +23,7 @@ enum TabItems: Int, CaseIterable {
         case .add:
             return "add"
         case .doctors:
-            return "Doctores"
+            return "Aprende"
         case .profile:
             return "Perfil"
         }
@@ -38,7 +38,7 @@ enum TabItems: Int, CaseIterable {
         case .add:
             return "plus"
         case .doctors:
-            return "staroflife"
+            return "book"
         case .profile:
             return "person.fill"
         }
@@ -84,6 +84,7 @@ extension HomeView {
 
 
 struct HomeView: View {
+    @StateObject var historyVM = HistoryContentViewModel()
     @State var popupIsShown = false
     @State var selectedTab = 0
     
@@ -94,10 +95,10 @@ struct HomeView: View {
                     DailyView()
                         .tag(0)
                     
-                    HistoryListView()
+                    HistoryListView(history: historyVM.history)
                         .tag(1)
                     
-                    DoctorListView()
+                    LearnView()
                         .tag(3)
                     
                     ProfileView()

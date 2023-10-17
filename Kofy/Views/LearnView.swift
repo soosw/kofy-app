@@ -1,13 +1,13 @@
 //
-//  DailyView.swift
+//  LearnView.swift
 //  Kofy
 //
-//  Created by Diego Gutierrez on 11/10/23.
+//  Created by Diego Gutierrez on 14/10/23.
 //
 
 import SwiftUI
 
-struct DailyView: View {
+struct LearnView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -20,7 +20,7 @@ struct DailyView: View {
                             .ignoresSafeArea()
                             .frame(maxHeight: 0)
                         HStack {
-                            Text("Hola, Gerardo")
+                            Text("Lecciones")
                                 .font(Font.system(size: 35, weight: .bold))
                                 .foregroundStyle(Color(red: 0.278, green: 0.278, blue: 0.278))
                                 .padding([.leading], 30)
@@ -44,35 +44,8 @@ struct DailyView: View {
                     
                     Spacer()
                     
-                    VStack(alignment: .leading) {
-                        Text("Recordatorios")
-                            .foregroundStyle(Color(red: 0.956, green: 0.752, blue: 0.396))
-                            .font(Font.system(size: 32, weight: .bold))
-                            .padding([.leading], 25)
-                            .padding([.top], 10)
-                        
-                        ReminderListView()
-                    }
-                    
-                    VStack {
-                        Color(red: 0.313, green: 0.313, blue: 0.313)
-                            .frame(width: geometry.size.width / 1.3, height: 4)
-                            .cornerRadius(.infinity)
-                    }
-                    .padding([.top, .bottom], 10)
-                    
-                    VStack {
-                        Text("Koffy")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.leading], 25)
-                            .font(Font.system(size: 32, weight: .bold))
-                        
-                    }
-                    
-                    
                 }
             }
-            .padding([.bottom])
             .ignoresSafeArea(.keyboard)
             .frame(width: geometry.size.width)
         }
@@ -80,5 +53,5 @@ struct DailyView: View {
 }
 
 #Preview {
-    DailyView()
+    LearnView()
 }

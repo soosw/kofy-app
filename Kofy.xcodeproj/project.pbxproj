@@ -18,6 +18,11 @@
 		56267ED42AD7720D00A39AB7 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */; };
 		56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */; };
 		56267ED82AD8EF9000A39AB7 /* NewDoctorPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */; };
+		56267EDA2ADB6AF100A39AB7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED92ADB6AF100A39AB7 /* HistoryView.swift */; };
+		56267EDF2ADB6F1000A39AB7 /* HistoryContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */; };
+		56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */; };
+		56267EE32ADB749500A39AB7 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE22ADB749500A39AB7 /* LearnView.swift */; };
+		56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE52ADDD37000A39AB7 /* HistoryCard.swift */; };
 		56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F472ACC9350008750FD /* KofyApp.swift */; };
 		56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F492ACC9350008750FD /* ContentView.swift */; };
 		56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4B2ACC9351008750FD /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 		56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
 		56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDoctorPopupView.swift; sourceTree = "<group>"; };
+		56267ED92ADB6AF100A39AB7 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentModel.swift; sourceTree = "<group>"; };
+		56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentViewModel.swift; sourceTree = "<group>"; };
+		56267EE22ADB749500A39AB7 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		56267EE52ADDD37000A39AB7 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
 		56CB6F442ACC9350008750FD /* Kofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB6F472ACC9350008750FD /* KofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KofyApp.swift; sourceTree = "<group>"; };
 		56CB6F492ACC9350008750FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,12 +88,29 @@
 		56267EC62AD74B1000A39AB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */,
 				56267EC72AD74B2500A39AB7 /* SpeechRecognizer.swift */,
 				56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */,
 				FBF5D0A22AD9C33900B1F418 /* SignUpModel.swift */,
 				FBF5D0A42AD9C76200B1F418 /* SignUpViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		56267EDB2ADB6ECA00A39AB7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		56267EE42ADDD26A00A39AB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				56267EE52ADDD37000A39AB7 /* HistoryCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		56CB6F3B2ACC9350008750FD = {
@@ -105,10 +132,12 @@
 		56CB6F462ACC9350008750FD /* Kofy */ = {
 			isa = PBXGroup;
 			children = (
+				56267EDB2ADB6ECA00A39AB7 /* ViewModels */,
 				56267EC62AD74B1000A39AB7 /* Models */,
 				56CB6F682ACD27CE008750FD /* Info.plist */,
 				56CB6F652ACD26EB008750FD /* Fonts */,
 				56CB6F5A2ACD0D80008750FD /* Views */,
+				56267EE42ADDD26A00A39AB7 /* Components */,
 				56CB6F552ACD0CBA008750FD /* Media */,
 				56CB6F472ACC9350008750FD /* KofyApp.swift */,
 				56CB6F492ACC9350008750FD /* ContentView.swift */,
@@ -139,6 +168,8 @@
 			children = (
 				56CB6F5B2ACD0D90008750FD /* SplashView.swift */,
 				56CB6F8B2ACE2F0D008750FD /* HomeView.swift */,
+				56267EE22ADB749500A39AB7 /* LearnView.swift */,
+				56267ED92ADB6AF100A39AB7 /* HistoryView.swift */,
 				56267EC92AD763DD00A39AB7 /* DoctorListView.swift */,
 				56267ECB2AD7640A00A39AB7 /* ProfileView.swift */,
 				56267EC32AD74A6100A39AB7 /* SpeechSessionView.swift */,
@@ -239,13 +270,17 @@
 				56267EC02AD46BA400A39AB7 /* HistoryListView.swift in Sources */,
 				56267ED22AD771B200A39AB7 /* PopupModifier.swift in Sources */,
 				56CB6F8A2ACE2C53008750FD /* SignInView.swift in Sources */,
+				56267EDF2ADB6F1000A39AB7 /* HistoryContentModel.swift in Sources */,
 				56CB6F8C2ACE2F0D008750FD /* HomeView.swift in Sources */,
 				56267ECA2AD763DD00A39AB7 /* DoctorListView.swift in Sources */,
 				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
 				56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */,
 				FBF5D0A32AD9C33900B1F418 /* SignUpModel.swift in Sources */,
+				56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */,
 				56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */,
+				56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */,
 				56267EC82AD74B2500A39AB7 /* SpeechRecognizer.swift in Sources */,
+				56267EE32ADB749500A39AB7 /* LearnView.swift in Sources */,
 				56267EC42AD74A6100A39AB7 /* SpeechSessionView.swift in Sources */,
 				56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */,
 				56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */,
@@ -255,6 +290,7 @@
 				56267ED42AD7720D00A39AB7 /* BottomPopupView.swift in Sources */,
 				56267EC22AD7428200A39AB7 /* DailyView.swift in Sources */,
 				56267ECC2AD7640A00A39AB7 /* ProfileView.swift in Sources */,
+				56267EDA2ADB6AF100A39AB7 /* HistoryView.swift in Sources */,
 				56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */,
 				56267ED82AD8EF9000A39AB7 /* NewDoctorPopupView.swift in Sources */,
 			);
