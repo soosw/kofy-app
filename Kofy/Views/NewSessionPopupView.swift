@@ -282,8 +282,8 @@ struct NewSessionPopupView: View {
                 .offset(y: CGFloat(cardSlideOffset))
             }
             .shadow(color: .gray, radius: 15, x: 0,  y: 8)
-            .ignoresSafeArea(.keyboard)
-            .ignoresSafeArea(.all)
+//            .ignoresSafeArea(.keyboard)
+//            .ignoresSafeArea(.all)
             .edgesIgnoringSafeArea([.bottom])
             .gesture(
                 DragGesture()

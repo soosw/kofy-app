@@ -71,17 +71,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "27BD5E1C-EFE6-4586-81DD-FDDF74E7E4BC"
+            uuid = "34512EFC-A50E-4299-BE94-35DEF781F94A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kofy/Views/HistoryListView.swift"
+            filePath = "../../../../../../var/folders/mc/bjv2jwqx5p5dj21051n3_n1w0000gn/T/swift-generated-sources/@__swiftmacro_4Kofy33_64F3BB1B74BABCB6EA186DBA6D28D14FLl7PreviewfMf_.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "filteredHistory"
-            landmarkType = "24">
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s4Kofy33_64F3BB1B74BABCB6EA186DBA6D28D14FLl7PreviewfMf_15PreviewRegistryfMu_"
+            landmarkType = "37">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,13 +16,19 @@ struct HistoryListView: View {
         }
     }
     
+    @State var shown = false
+    @State var currentNamespace = Namespace().wrappedValue
+    @State var selectedCard = 0
+    
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
     var cardColors = ["CardColor0", "CardColor1", "CardColor2", "CardColor3", "CardColor4", "CardColor5"]
     
+    @State private var cardNamespaces:[Namespace.ID] = []
     @State private var searchText = ""
     @State private var searchDate = Date()
     @State private var filtersShown = false
+    @State private var disabledTouch = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -91,8 +97,19 @@ struct HistoryListView: View {
                             Color("BackgroundColor")
                             ScrollView {
                                 LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
-                                    ForEach(filteredHistory) { card in
-                                        HistoryView(content: card)
+                                    ForEach(Array(filteredHistory.enumerated()), id: \.element.id) { (index, card) in
+                                        if (cardNamespaces.count != 0) {
+                                            HistoryCard(namespace: cardNamespaces[index], shown: $shown, content: card)
+                                                .onTapGesture {
+                                                    if (!disabledTouch) {
+                                                        selectedCard = index
+                                                        disabledTouch = true
+                                                        withAnimation {
+                                                            shown.toggle()
+                                                        }
+                                                    }
+                                                }
+                                        }
                                     }
                                 }
                             }
@@ -101,13 +118,23 @@ struct HistoryListView: View {
                         .ignoresSafeArea()
                     }
                 }
+                
+                if (shown) {
+                    HistoryView(namespace: cardNamespaces[selectedCard], shown: $shown, disabledTouch: $disabledTouch, content: filteredHistory[selectedCard])
+                }
             }
             .ignoresSafeArea(.keyboard)
             .frame(width: geometry.size.width)
+            .onAppear() {
+                for _ in 1...history.count {
+                    let newNamespace = Namespace().wrappedValue
+                    cardNamespaces.append(newNamespace)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    HistoryListView(history: [HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 1), HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 2), HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 3), HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 4)])
+    HistoryListView(history: [HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 1), HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 2), HistoryContentModel(doctor: "Dr. José Luis", description: "Cita con dermatólogo", date: "3/10/2023", color: 3), HistoryContentModel(doctor: "Dra. Sandra", description: "Cita con dermatólogo", date: "3/10/2023", color: 4)])
 }
