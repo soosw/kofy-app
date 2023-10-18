@@ -1,16 +1,28 @@
 //
-//  SignUpView.swift
+//  SignInView.swift
 //  Kofy
 //
 //  Created by Diego Gutierrez on 04/10/23.
 //
 
 import SwiftUI
+import CryptoKit
 
-struct SignUpView: View {
-    @State private var username: String = ""
-    @State private var mail: String = ""
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
+    }
+}
+
+struct SignInView: View {
+    @State private var email: String = ""
     @State private var password: String = ""
+    @State private var btnIsDisabled = false
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -38,17 +50,9 @@ struct SignUpView: View {
                             ZStack {
                                 Color(red: 0.16, green: 0.16, blue: 0.16)
                                     .cornerRadius(10)
-                                TextField("Usuario", text: $username)
+                                TextField("Correo", text: $email)
                                     .padding()
-                            }
-                            .frame(height: 60)
-                            
-                            ZStack {
-                                Color(red: 0.16, green: 0.16, blue: 0.16)
-                                    .cornerRadius(10)
-                                TextField("Correo", text: $mail)
-                                    .keyboardType(.emailAddress)
-                                    .padding()
+                                    .textInputAutocapitalization(.never)
                             }
                             .frame(height: 60)
                             
@@ -57,23 +61,28 @@ struct SignUpView: View {
                                     .cornerRadius(10)
                                 SecureField("Contraseña", text: $password)
                                     .padding()
+                                    .textInputAutocapitalization(.never)
                             }
                             .frame(height: 60)
                         }
                         .frame(width: geometry.size.width * 0.75)
                         
                         Button {
-                            let signUp = SignUpViewModel()
+                            btnIsDisabled.toggle()
+                            let signIn = SignInViewModel()
                             
-                            Task{
-                                try await signUp.registerSignUpData(username: username, email: mail, password: password, type: 0)
+                            Task {
+                                let hashedPassword = SHA512.hash(data: Data(password.utf8))
+                                let hashString = hashedPassword.compactMap { String(format: "%02x", $0) }.joined()
+                                try await signIn.verifySignIn(email: email, password: hashString)
                             }
                             
-                        
+                            btnIsDisabled.toggle()
                         } label: {
-                            Text("Registrarme")
+                            Text("Iniciar Sesión")
                                 .frame(width: geometry.size.width / 2.5)
                         }
+                        .disabled(btnIsDisabled)
                         .padding()
                         .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.694, green: 0.376, blue: 0.941), Color(red: 0.533, green: 0.49, blue: 1)]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(.infinity)
@@ -83,6 +92,7 @@ struct SignUpView: View {
                             RoundedRectangle(cornerRadius: .infinity)
                                 .stroke(.white, lineWidth: 3)
                         )
+                        .opacity(btnIsDisabled ? 0.8 : 1)
                     }
                     
                     VStack {
@@ -93,20 +103,22 @@ struct SignUpView: View {
                     .padding([.top, .bottom], 10)
                     
                     Button {
-                        print("Registrarme")
+                        print("Iniciar Sesión")
                     } label: {
                         HStack {
                             Image(systemName: "apple.logo")
                                 .font(.title)
-                            Text("Registrarme")
+                            Text("Iniciar Sesión")
                                 .frame(width: geometry.size.width / 3.5)
                         }
                         .padding()
                     }
+                    .disabled(btnIsDisabled)
                     .background(.black)
                     .cornerRadius(.infinity)
                     .foregroundStyle(.white)
                     .bold()
+                    .opacity(btnIsDisabled ? 0.8 : 1)
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -129,6 +141,3 @@ struct SignUpView: View {
     }
 }
 
-#Preview {
-    SignUpView()
-}
