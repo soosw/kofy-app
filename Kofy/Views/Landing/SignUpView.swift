@@ -1,25 +1,16 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  Kofy
 //
 //  Created by Diego Gutierrez on 04/10/23.
 //
 
 import SwiftUI
+import CryptoKit
 
-extension UINavigationController: UIGestureRecognizerDelegate {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
-    }
-
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
-    }
-}
-
-struct SignInView: View {
+struct SignUpView: View {
     @State private var username: String = ""
+    @State private var mail: String = ""
     @State private var password: String = ""
     @Environment(\.dismiss) var dismiss
     
@@ -50,6 +41,18 @@ struct SignInView: View {
                                     .cornerRadius(10)
                                 TextField("Usuario", text: $username)
                                     .padding()
+                                    .autocorrectionDisabled()
+                                    .textInputAutocapitalization(.never)
+                            }
+                            .frame(height: 60)
+                            
+                            ZStack {
+                                Color(red: 0.16, green: 0.16, blue: 0.16)
+                                    .cornerRadius(10)
+                                TextField("Correo", text: $mail)
+                                    .keyboardType(.emailAddress)
+                                    .padding()
+                                    .textInputAutocapitalization(.never)
                             }
                             .frame(height: 60)
                             
@@ -58,15 +61,24 @@ struct SignInView: View {
                                     .cornerRadius(10)
                                 SecureField("Contraseña", text: $password)
                                     .padding()
+                                    .textInputAutocapitalization(.never)
                             }
                             .frame(height: 60)
                         }
                         .frame(width: geometry.size.width * 0.75)
                         
                         Button {
-                            print("Iniciar Sesión")
+                            let signUp = SignUpViewModel()
+                            
+                            Task {
+                                let hashedPassword = SHA512.hash(data: Data(password.utf8))
+                                let hashString = hashedPassword.compactMap { String(format: "%02x", $0) }.joined()
+                                try await signUp.registerSignUpData(username: username, email: mail, password: hashString, type: 0)
+                            }
+                            
+                        
                         } label: {
-                            Text("Iniciar Sesión")
+                            Text("Registrarme")
                                 .frame(width: geometry.size.width / 2.5)
                         }
                         .padding()
@@ -88,12 +100,12 @@ struct SignInView: View {
                     .padding([.top, .bottom], 10)
                     
                     Button {
-                        print("Iniciar Sesión")
+                        print("Registrarme")
                     } label: {
                         HStack {
                             Image(systemName: "apple.logo")
                                 .font(.title)
-                            Text("Iniciar Sesión")
+                            Text("Registrarme")
                                 .frame(width: geometry.size.width / 3.5)
                         }
                         .padding()
@@ -124,3 +136,6 @@ struct SignInView: View {
     }
 }
 
+#Preview {
+    SignUpView()
+}

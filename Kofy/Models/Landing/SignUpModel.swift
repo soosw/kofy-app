@@ -8,7 +8,6 @@
 import Foundation
 
 struct SignUpInformation : Encodable {
-    
     var username : String
     var email : String
     var password : String
