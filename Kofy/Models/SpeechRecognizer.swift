@@ -66,7 +66,7 @@ class SpeechRecognizer: ObservableObject {
         task = nil
     }
     
-    func transcribe() {
+    func transcribe(givenAudioSession: AVAudioSession) {
         DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)
@@ -74,13 +74,13 @@ class SpeechRecognizer: ObservableObject {
             }
             
             do {
-                let (audioEngine, request) = try Self.prepareEngine()
+                let (audioEngine, request) = try Self.prepareEngine(givenAudioSession: givenAudioSession)
                 self.audioEngine = audioEngine
                 self.request = request
                 
                 self.task = recognizer.recognitionTask(with: request) { result, error in
                     let receivedFinalResult = result?.isFinal ?? false
-                    let receivedError = error != nil // != nil mean there's error (true)
+                    let receivedError = error != nil
                     
                     if receivedFinalResult || receivedError {
                         audioEngine.stop()
@@ -98,15 +98,15 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
-    private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
+    private static func prepareEngine(givenAudioSession: AVAudioSession) throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let audioEngine = AVAudioEngine()
         
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.addsPunctuation = true
         request.shouldReportPartialResults = true
         
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        let audioSession = givenAudioSession
+        try audioSession.setCategory(.playAndRecord, mode: .measurement, options: [.mixWithOthers, .defaultToSpeaker])
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         try audioSession.setInputGain(0.5)
         let inputNode = audioEngine.inputNode
@@ -118,7 +118,11 @@ class SpeechRecognizer: ObservableObject {
             request.append(buffer)
         }
         audioEngine.prepare()
-        try audioEngine.start()
+        do {
+            try audioEngine.start()
+        } catch {
+            print("ERROR starting audio Engine")
+        }
         
         return (audioEngine, request)
     }

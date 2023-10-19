@@ -42,10 +42,12 @@ struct ProfileView: View {
                         )
                     }
                     
-                    Spacer()
                     
+                    
+                    Spacer()
                 }
             }
+            .padding(.bottom)
             .ignoresSafeArea(.keyboard)
             .frame(width: geometry.size.width)
         }

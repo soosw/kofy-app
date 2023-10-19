@@ -87,6 +87,7 @@ struct HomeView: View {
     @StateObject var historyVM = HistoryContentViewModel()
     @State var popupIsShown = false
     @State var selectedTab = 0
+    @State var selectedTabTitle = ""
     
     var body: some View {
         GeometryReader { geometry in
@@ -98,7 +99,7 @@ struct HomeView: View {
                     HistoryListView(history: historyVM.history)
                         .tag(1)
                     
-                    LearnView()
+                    LearnListView()
                         .tag(3)
                     
                     ProfileView()
@@ -111,15 +112,20 @@ struct HomeView: View {
                         ForEach((TabItems.allCases), id: \.self) { item in
                             Button {
                                 if (item.title != "add") {
+                                    selectedTabTitle = item.title
                                     selectedTab = item.rawValue
                                 } else {
-                                    popupIsShown = true
+                                    if (selectedTabTitle != "Aprende") {
+                                        popupIsShown = true
+                                    } else {
+                                        print("OPEN CO-ML")
+                                    }
                                 }
                             } label: {
                                 if (item.title != "add") {
                                     CustomTabItem(imageName: item.iconName, title: item.title, isActive: (selectedTab == item.rawValue))
                                 } else {
-                                    CustomAddButton(imageName: item.iconName, title: item.title, isActive: (selectedTab == item.rawValue))
+                                    CustomAddButton(imageName: (selectedTabTitle != "Aprende") ? item.iconName : "camera", title: item.title, isActive: (selectedTab == item.rawValue))
                                 }
                             }
                             .sensoryFeedback(trigger: popupIsShown) { oldValue, newValue in

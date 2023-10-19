@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct LearnView: View {
+struct LearnListView: View {
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -43,7 +45,15 @@ struct LearnView: View {
                     }
                     
                     Spacer()
-                    
+                        
+                    ScrollView {
+                        LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
+                            ForEach(0..<4) { _ in
+                                LearnCard()
+                            }
+                        }
+                    }
+                    .padding()
                 }
             }
             .ignoresSafeArea(.keyboard)
@@ -53,5 +63,5 @@ struct LearnView: View {
 }
 
 #Preview {
-    LearnView()
+    LearnListView()
 }

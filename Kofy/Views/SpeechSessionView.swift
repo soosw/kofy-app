@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct SpeechSessionView: View {
-    @State var sessionAnswer = ""
     @State var sessionName = "Nueva Sesión"
-//    @State var sessionText = "Hola Gerardo, buenos días. Recuerdo que la última vez que nos vimos me comentaste que tenías"
     
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isListening = false
+    
+    @StateObject var speechModel = ContentViewModel(
+            speechSynthesizer: SpeechSynthesizer()
+        )
     
     var body: some View {
         GeometryReader { geometry in
@@ -45,9 +47,14 @@ struct SpeechSessionView: View {
                 VStack(alignment: .center) {
                     Button() {
                         if !isListening {
-                            speechRecognizer.transcribe()
+                            AudioSessionManager.shared.activateRecognitionSession()
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                speechRecognizer.transcribe(givenAudioSession: AudioSessionManager.shared.recognitionAudioSession)
+                            }
                         } else {
                             speechRecognizer.stopTranscribing()
+                            AudioSessionManager.shared.activatePlaybackSession()
                         }
                         
                         isListening.toggle()
@@ -62,16 +69,40 @@ struct SpeechSessionView: View {
                     }
                     .frame(height: 60)
                     
-                    ZStack {
-                        Color(red: 0.16, green: 0.16, blue: 0.16)
-                            .cornerRadius(.infinity)
-                        TextField("Respuesta", text: $sessionAnswer)
-                            .padding()
+                    HStack {
+                        ZStack {
+                            Color(red: 0.16, green: 0.16, blue: 0.16)
+                                .cornerRadius(.infinity)
+                            TextField("Respuesta", text: $speechModel.text)
+                                .padding()
+                        }
+                        .padding()
+                        
+                        Button {
+                            speechRecognizer.stopTranscribing()
+                            AudioSessionManager.shared.activatePlaybackSession()
+                            isListening = false
+                            speechModel.textToSpeech()
+                            speechModel.text = ""
+                        } label: {
+                            ZStack {
+                                Color(.blue)
+                                Image(systemName: "text.bubble")
+                                    .foregroundStyle(.white)
+                            }
+                            .clipShape(Circle())
+                            .frame(width: 40)
+                        }
+                        .padding([.trailing])
                     }
-                    .padding()
                     .frame(height: 60)
                 }
                 .frame(maxWidth: geometry.size.width)
+            }
+            .onAppear() {
+                AudioSessionManager.shared.configureRecognitionAudioSession()
+                AudioSessionManager.shared.configurePlaybackAudioSession()
+                AudioSessionManager.shared.activatePlaybackSession()
             }
         }
     }
