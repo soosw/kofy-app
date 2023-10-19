@@ -11,7 +11,6 @@
 		56267EC22AD7428200A39AB7 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EC12AD7428200A39AB7 /* DailyView.swift */; };
 		56267EC42AD74A6100A39AB7 /* SpeechSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EC32AD74A6100A39AB7 /* SpeechSessionView.swift */; };
 		56267EC82AD74B2500A39AB7 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EC72AD74B2500A39AB7 /* SpeechRecognizer.swift */; };
-		56267ECA2AD763DD00A39AB7 /* DoctorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EC92AD763DD00A39AB7 /* DoctorListView.swift */; };
 		56267ECC2AD7640A00A39AB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ECB2AD7640A00A39AB7 /* ProfileView.swift */; };
 		56267ECE2AD766DB00A39AB7 /* NewSessionPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */; };
 		56267ED22AD771B200A39AB7 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED12AD771B200A39AB7 /* PopupModifier.swift */; };
@@ -21,8 +20,13 @@
 		56267EDA2ADB6AF100A39AB7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267ED92ADB6AF100A39AB7 /* HistoryView.swift */; };
 		56267EDF2ADB6F1000A39AB7 /* HistoryContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */; };
 		56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */; };
-		56267EE32ADB749500A39AB7 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE22ADB749500A39AB7 /* LearnView.swift */; };
+		56267EE32ADB749500A39AB7 /* LearnListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE22ADB749500A39AB7 /* LearnListView.swift */; };
 		56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE52ADDD37000A39AB7 /* HistoryCard.swift */; };
+		56267EE82ADE489400A39AB7 /* LearnCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EE72ADE489400A39AB7 /* LearnCard.swift */; };
+		56267EEC2ADF057000A39AB7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EEB2ADF056F00A39AB7 /* SignInModel.swift */; };
+		56267EEE2ADF057B00A39AB7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EED2ADF057B00A39AB7 /* SignInViewModel.swift */; };
+		56267EF52AE0531400A39AB7 /* RegistrationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56267EF42AE0531400A39AB7 /* RegistrationPopup.swift */; };
+		565724AC2AE0A033000FB2ED /* AudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565724AB2AE0A033000FB2ED /* AudioSessionManager.swift */; };
 		56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F472ACC9350008750FD /* KofyApp.swift */; };
 		56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB6F492ACC9350008750FD /* ContentView.swift */; };
 		56CB6F4C2ACC9351008750FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CB6F4B2ACC9351008750FD /* Assets.xcassets */; };
@@ -44,7 +48,6 @@
 		56267EC12AD7428200A39AB7 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
 		56267EC32AD74A6100A39AB7 /* SpeechSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSessionView.swift; sourceTree = "<group>"; };
 		56267EC72AD74B2500A39AB7 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
-		56267EC92AD763DD00A39AB7 /* DoctorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListView.swift; sourceTree = "<group>"; };
 		56267ECB2AD7640A00A39AB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionPopupView.swift; sourceTree = "<group>"; };
 		56267ED12AD771B200A39AB7 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
@@ -54,8 +57,13 @@
 		56267ED92ADB6AF100A39AB7 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentModel.swift; sourceTree = "<group>"; };
 		56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentViewModel.swift; sourceTree = "<group>"; };
-		56267EE22ADB749500A39AB7 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		56267EE22ADB749500A39AB7 /* LearnListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnListView.swift; sourceTree = "<group>"; };
 		56267EE52ADDD37000A39AB7 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
+		56267EE72ADE489400A39AB7 /* LearnCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCard.swift; sourceTree = "<group>"; };
+		56267EEB2ADF056F00A39AB7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		56267EED2ADF057B00A39AB7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		56267EF42AE0531400A39AB7 /* RegistrationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPopup.swift; sourceTree = "<group>"; };
+		565724AB2AE0A033000FB2ED /* AudioSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionManager.swift; sourceTree = "<group>"; };
 		56CB6F442ACC9350008750FD /* Kofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB6F472ACC9350008750FD /* KofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KofyApp.swift; sourceTree = "<group>"; };
 		56CB6F492ACC9350008750FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,11 +96,11 @@
 		56267EC62AD74B1000A39AB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56267EEA2ADF055900A39AB7 /* Landing */,
 				56267EDE2ADB6F1000A39AB7 /* HistoryContentModel.swift */,
 				56267EC72AD74B2500A39AB7 /* SpeechRecognizer.swift */,
 				56267ED52AD87EE400A39AB7 /* TextToSpeech.swift */,
-				FBF5D0A22AD9C33900B1F418 /* SignUpModel.swift */,
-				FBF5D0A42AD9C76200B1F418 /* SignUpViewModel.swift */,
+				565724AB2AE0A033000FB2ED /* AudioSessionManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 		56267EDB2ADB6ECA00A39AB7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				56267EF12ADF4AB700A39AB7 /* Landing */,
 				56267EE02ADB6F6900A39AB7 /* HistoryContentViewModel.swift */,
 			);
 			path = ViewModels;
@@ -109,8 +118,75 @@
 			isa = PBXGroup;
 			children = (
 				56267EE52ADDD37000A39AB7 /* HistoryCard.swift */,
+				56267EE72ADE489400A39AB7 /* LearnCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		56267EE92ADF042500A39AB7 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				56CB6F5B2ACD0D90008750FD /* SplashView.swift */,
+				56CB6F632ACD23CC008750FD /* LandingView.swift */,
+				56CB6F892ACE2C53008750FD /* SignInView.swift */,
+				56CB6F872ACE2810008750FD /* SignUpView.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		56267EEA2ADF055900A39AB7 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				FBF5D0A22AD9C33900B1F418 /* SignUpModel.swift */,
+				56267EEB2ADF056F00A39AB7 /* SignInModel.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		56267EEF2ADF4A5300A39AB7 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				56267EF42AE0531400A39AB7 /* RegistrationPopup.swift */,
+				56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */,
+				56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */,
+				56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */,
+				56267ED12AD771B200A39AB7 /* PopupModifier.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
+		56267EF02ADF4A8300A39AB7 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				56267EBF2AD46BA400A39AB7 /* HistoryListView.swift */,
+				56267ED92ADB6AF100A39AB7 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		56267EF12ADF4AB700A39AB7 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				FBF5D0A42AD9C76200B1F418 /* SignUpViewModel.swift */,
+				56267EED2ADF057B00A39AB7 /* SignInViewModel.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		56267EF22ADF4ACD00A39AB7 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				56267EE22ADB749500A39AB7 /* LearnListView.swift */,
+			);
+			path = Learning;
+			sourceTree = "<group>";
+		};
+		56267EF32ADF4B0800A39AB7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				56267ECB2AD7640A00A39AB7 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		56CB6F3B2ACC9350008750FD = {
@@ -166,23 +242,15 @@
 		56CB6F5A2ACD0D80008750FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56CB6F5B2ACD0D90008750FD /* SplashView.swift */,
 				56CB6F8B2ACE2F0D008750FD /* HomeView.swift */,
-				56267EE22ADB749500A39AB7 /* LearnView.swift */,
-				56267ED92ADB6AF100A39AB7 /* HistoryView.swift */,
-				56267EC92AD763DD00A39AB7 /* DoctorListView.swift */,
-				56267ECB2AD7640A00A39AB7 /* ProfileView.swift */,
-				56267EC32AD74A6100A39AB7 /* SpeechSessionView.swift */,
 				56267EC12AD7428200A39AB7 /* DailyView.swift */,
+				56267EC32AD74A6100A39AB7 /* SpeechSessionView.swift */,
 				56CB6F8F2ACE38B5008750FD /* ReminderListView.swift */,
-				56CB6F632ACD23CC008750FD /* LandingView.swift */,
-				56CB6F872ACE2810008750FD /* SignUpView.swift */,
-				56CB6F892ACE2C53008750FD /* SignInView.swift */,
-				56267EBF2AD46BA400A39AB7 /* HistoryListView.swift */,
-				56267ECD2AD766DB00A39AB7 /* NewSessionPopupView.swift */,
-				56267ED72AD8EF9000A39AB7 /* NewDoctorPopupView.swift */,
-				56267ED12AD771B200A39AB7 /* PopupModifier.swift */,
-				56267ED32AD7720D00A39AB7 /* BottomPopupView.swift */,
+				56267EE92ADF042500A39AB7 /* Landing */,
+				56267EEF2ADF4A5300A39AB7 /* Popups */,
+				56267EF02ADF4A8300A39AB7 /* History */,
+				56267EF22ADF4ACD00A39AB7 /* Learning */,
+				56267EF32ADF4B0800A39AB7 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,24 +339,28 @@
 				56267ED22AD771B200A39AB7 /* PopupModifier.swift in Sources */,
 				56CB6F8A2ACE2C53008750FD /* SignInView.swift in Sources */,
 				56267EDF2ADB6F1000A39AB7 /* HistoryContentModel.swift in Sources */,
+				56267EF52AE0531400A39AB7 /* RegistrationPopup.swift in Sources */,
 				56CB6F8C2ACE2F0D008750FD /* HomeView.swift in Sources */,
-				56267ECA2AD763DD00A39AB7 /* DoctorListView.swift in Sources */,
 				56CB6F642ACD23CC008750FD /* LandingView.swift in Sources */,
+				565724AC2AE0A033000FB2ED /* AudioSessionManager.swift in Sources */,
 				56CB6F882ACE2810008750FD /* SignUpView.swift in Sources */,
 				FBF5D0A32AD9C33900B1F418 /* SignUpModel.swift in Sources */,
 				56267EE62ADDD37000A39AB7 /* HistoryCard.swift in Sources */,
 				56267ED62AD87EE400A39AB7 /* TextToSpeech.swift in Sources */,
 				56267EE12ADB6F6900A39AB7 /* HistoryContentViewModel.swift in Sources */,
 				56267EC82AD74B2500A39AB7 /* SpeechRecognizer.swift in Sources */,
-				56267EE32ADB749500A39AB7 /* LearnView.swift in Sources */,
+				56267EE32ADB749500A39AB7 /* LearnListView.swift in Sources */,
 				56267EC42AD74A6100A39AB7 /* SpeechSessionView.swift in Sources */,
 				56CB6F5C2ACD0D90008750FD /* SplashView.swift in Sources */,
 				56CB6F4A2ACC9350008750FD /* ContentView.swift in Sources */,
+				56267EEC2ADF057000A39AB7 /* SignInModel.swift in Sources */,
 				FBF5D0A52AD9C76200B1F418 /* SignUpViewModel.swift in Sources */,
 				56CB6F902ACE38B5008750FD /* ReminderListView.swift in Sources */,
 				56267ECE2AD766DB00A39AB7 /* NewSessionPopupView.swift in Sources */,
 				56267ED42AD7720D00A39AB7 /* BottomPopupView.swift in Sources */,
+				56267EE82ADE489400A39AB7 /* LearnCard.swift in Sources */,
 				56267EC22AD7428200A39AB7 /* DailyView.swift in Sources */,
+				56267EEE2ADF057B00A39AB7 /* SignInViewModel.swift in Sources */,
 				56267ECC2AD7640A00A39AB7 /* ProfileView.swift in Sources */,
 				56267EDA2ADB6AF100A39AB7 /* HistoryView.swift in Sources */,
 				56CB6F482ACC9350008750FD /* KofyApp.swift in Sources */,
@@ -430,6 +502,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kofy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se utilizará la cámara para facilitar la detección de objetos en la sección de aprender";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Kofy actualiza tu perfil con los datos capturados en la app de Salud";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se utilizará el microfono para capturar los subtitulos";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Se utilizará el microfono para capturar los subtitulos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,9 +519,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Diegogtz03.Kofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +540,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kofy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se utilizará la cámara para facilitar la detección de objetos en la sección de aprender";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Kofy actualiza tu perfil con los datos capturados en la app de Salud";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se utilizará el microfono para capturar los subtitulos";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Se utilizará el microfono para capturar los subtitulos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -478,9 +557,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Diegogtz03.Kofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
