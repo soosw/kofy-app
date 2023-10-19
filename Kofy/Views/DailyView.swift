@@ -62,14 +62,14 @@ struct DailyView: View {
                     .padding([.top, .bottom], 10)
                     
                     VStack {
-                        Text("Koffy")
+                        Text("Kofy")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.leading], 25)
                             .font(Font.system(size: 32, weight: .bold))
                         
+                        Spacer()
+                        
                     }
-                    
-                    
                 }
             }
             .padding([.bottom])
